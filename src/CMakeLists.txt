@@ -1,0 +1,1 @@
+ADD_EXECUTABLE( 21Days main.cpp)
