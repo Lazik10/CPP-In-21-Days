@@ -5,7 +5,7 @@ OOP - Object oriented programming
 
 3 main parts
 
-1. Encasement/Encapsulation 
+1. ENCASEMENT/ENCAPSULATION
 - All C++ programs are composed of the following two fundamental elements:
 
 Program statements (code): This is the part of a program that performs actions and they are called functions.
@@ -20,7 +20,7 @@ Data encapsulation is a mechanism of bundling the data, and the functions that u
 C++ supports the properties of encapsulation and data hiding through the creation of user-defined types, called classes. We already have studied that a class can contain private, protected and public members. 
 By default, all items defined in a class are private. For example:
 
-2. Inheritance 				
+2. INHERITANCE 				
 - One of the most important concepts in object-oriented programming is that of inheritance.
 
 Inheritance allows us to define a class in terms of another class, which makes it easier to create and maintain an application. This also provides an opportunity to reuse the code functionality and fast implementation time.
@@ -29,7 +29,7 @@ When creating a class, instead of writing completely new data members and member
 
 The idea of inheritance implements the is a relationship. For example, mammal IS-A animal, dog IS-A mammal hence dog IS-A animal as well and so on.
 
-3. Polymorphism				
+3. POLYMORPHISM				
 - The word polymorphism means having many forms. Typically, polymorphism occurs when there is a hierarchy of classes and they are related by inheritance.
 
 C++ polymorphism means that a call to a member function will cause a different function to be executed depending on the type of object that invokes the function.
@@ -39,6 +39,139 @@ ANSI - "antsy" - American National Standards Institute
 
 
 
+DAY 2:
+
+/// Documentation comment
+
+// One-line comment
+
+/* Multi-line comment */
+
+FUNCTIONS - every function has it's own PROTOTYPE usually in header file and it's own DECLARATION usually in cpp file where we declare what this function is going to do
 
 
 
+DAY 3:
+
+DATA TYPES
+Boolean						 True / False
+Character					 256 character values
+Integer						 -2 147 483 648 to 2 147 483 647          - unsigned 0 to 4 294 967 295
+Short Integer				 -32 768 to 32767                         - unsigned 0 to 65535 
+Long Integer				 -2 147 483 648 to 2 147 483 647          - unsigned 0 to 4 294 967 295
+Float						 1.2e-38 to 3.4e38
+Double						 2.2e-308 to 1.8e308
+
+KEY WORDS - We shouldn't use these as our variable name
+
+    asm
+    auto
+    bool			- data type
+    break
+    case
+    catch
+    char			- data type
+    class
+    const			- define new constant with specific type
+    const_cast
+    continue
+    default
+    delete
+    do
+    double			- data type
+    dynamic_cast
+    else
+    enum			- declares new type and every enumerated type has it's own value starting from 0
+    explicit
+    export
+    extern
+    false			- 0 value used for boolean data types
+    float			- data type
+    for
+    friend
+    goto
+    if
+    inline
+    int				- data type
+    long			- data type
+    mutable
+    namespace
+    new
+    operator
+    private
+    protected
+    public
+    register
+    reinterpret_cast
+    return			- return back from void function or method and returns value in other functions
+    short			- data type
+	signed			- data type with positive and also negative values
+    sizeof			- size of an object 
+    static
+    static_cast
+    struct
+    switch
+    template
+    this
+    throw
+    true			- 1 value used for boolean data types
+    try
+    typedef			- used for making new aliases of some datatype
+    typeid
+    typename
+    union
+    unsigned		- data type with only positive values
+    using
+    virtual
+    void			- type of function/method with no return values
+    volatile
+    wchar_t
+    while
+
+    and
+    and_eq
+    bitand
+    bitor
+    compl
+    not
+    not_eq
+    or
+    or_eq
+    xor
+    xor_eq
+
+SPECIAL CHARACTERS:
+
+char Ring = '\a';
+char Backspace = '\b';
+char nextFile = '\f';
+char newLine = '\n';
+char Tab = '\t';
+char verticalTab = '\v';
+char aostrophe = '\'';
+char quotes = '\"';
+char questionmark = '\?';
+char backslash = '\\';
+char octal = '\000';
+char hexadecimal = '\x000';
+
+
+DEFINE and CONST
+// Constant Definition - we should use the second one
+#define         MY_FIRST_CONSTANT_DEFINITION            = 1;
+const int32     MY_SECOND_CONSTANT_DEFINITION           = 1;
+
+
+// Enum - declares new type and every enumerated type has it's own value starting from 0
+//        unless we inicialize any of them, then the next enumerated type will have it's value bigger by 1 than previous one
+//        enumerated type in enum is taken as unsigned integer
+enum Color
+{
+    MONDAY,             // 0
+    TUESDAY = 100,      // 100
+    WEDNESDAY,          // 101
+    THURSDAY,           // 102
+    FRIDAY = 50,        // 50
+    SATURDAY = 98+2,    // 100 - it is possible to make two enumerated type with the same value
+    SUNDAY,             // 101
+};
