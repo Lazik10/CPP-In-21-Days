@@ -1,0 +1,44 @@
+DAY 1:
+
+
+OOP - Object oriented programming
+
+3 main parts
+
+1. Encasement/Encapsulation 
+- All C++ programs are composed of the following two fundamental elements:
+
+Program statements (code): This is the part of a program that performs actions and they are called functions.
+Program data: The data is the information of the program which affected by the program functions.
+
+Encapsulation is an Object Oriented Programming concept that binds together the data and functions that 
+manipulate the data, and that keeps both safe from outside interference and misuse. Data encapsulation 
+led to the important OOP concept of data hiding.
+
+Data encapsulation is a mechanism of bundling the data, and the functions that use them and data abstraction is a mechanism of exposing only the interfaces and hiding the implementation details from the user.
+ 
+C++ supports the properties of encapsulation and data hiding through the creation of user-defined types, called classes. We already have studied that a class can contain private, protected and public members. 
+By default, all items defined in a class are private. For example:
+
+2. Inheritance 				
+- One of the most important concepts in object-oriented programming is that of inheritance.
+
+Inheritance allows us to define a class in terms of another class, which makes it easier to create and maintain an application. This also provides an opportunity to reuse the code functionality and fast implementation time.
+
+When creating a class, instead of writing completely new data members and member functions, the programmer can designate that the new class should inherit the members of an existing class. This existing class is called the base class, and the new class is referred to as the derived class.
+
+The idea of inheritance implements the is a relationship. For example, mammal IS-A animal, dog IS-A mammal hence dog IS-A animal as well and so on.
+
+3. Polymorphism				
+- The word polymorphism means having many forms. Typically, polymorphism occurs when there is a hierarchy of classes and they are related by inheritance.
+
+C++ polymorphism means that a call to a member function will cause a different function to be executed depending on the type of object that invokes the function.
+
+
+ANSI - "antsy" - American National Standards Institute
+
+
+
+
+
+

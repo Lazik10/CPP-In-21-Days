@@ -1,7 +1,16 @@
-#include <stdio.h>
+#include <iostream>
+#include "Day1.h"
+
+using namespace std;
 
 int main()
-{
-    printf("Hello CMake!\n");
+{   
+    // First compile test
+    //cout << "Hello CMake!" << endl;
+
+    cout << "Learning C++ In 21 Days\n\n" << endl;
+    Day1();
+
+    getchar();
     return 0;
 }
