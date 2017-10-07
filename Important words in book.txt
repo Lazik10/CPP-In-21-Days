@@ -70,7 +70,7 @@ KEY WORDS - We shouldn't use these as our variable name
     break
     case
     catch
-    char			- data type
+    char			- data type, 0 == false, any other number == true
     class
     const			- define new constant with specific type
     const_cast
@@ -128,16 +128,16 @@ KEY WORDS - We shouldn't use these as our variable name
     wchar_t
     while
 
-    and
+    and             - &&, when both expressions are true then operator is also true
     and_eq
     bitand
     bitor
     compl
-    not
+    not             - !, is true if expression is false e.g: if (!(x==5)) it is the same as if (x==5)
     not_eq
-    or
+    or              - ||, is true if at least one of the expressions is true
     or_eq
-    xor
+    xor             - ^, is true only if at least one of the expression is true but not both at the same time
     xor_eq
 
 SPECIAL CHARACTERS:
@@ -175,3 +175,48 @@ enum Color
     SATURDAY = 98+2,    // 100 - it is possible to make two enumerated type with the same value
     SUNDAY,             // 101
 };
+
+RANDOM NUMBER GENERATOR
+
+// Innitialize random seed, we also need to include <ctime> library
+srand(time(NULL));
+
+Examples
+rand() % 100;         // in the range 0 to 99
+rand() % 100 + 1;     // in the range 1 to 100
+rand() % 30 + 1985;   // in the range 1985-2014
+
+
+
+
+DAY 4:
+
+COMMANDS: 
+
+All commands in C++ ends with ;
+
+EXPRESSION: 
+
+Everything which gives us some value is expression, expression returns value of: X
+All expressions are also commands.
+
+Relational and comparison operators ( ==, !=, >, <, >=, <= )
+==	Equal to
+!=	Not equal to
+<	Less than
+>	Greater than
+<=	Less than or equal to
+>=	Greater than or equal to
+
+Basic Logic Operators
+
+&&   and
+||   or
+!    not
+^    xor
+
+Conditional (ternary) operator - ( ?: )
+
+- Only one operator that expects three expressions
+(expression1) ? expression2 : expression3;
+If expression1 is true, execute expression2, if false execute expression3
