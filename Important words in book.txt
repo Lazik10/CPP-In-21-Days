@@ -220,3 +220,57 @@ Conditional (ternary) operator - ( ?: )
 - Only one operator that expects three expressions
 (expression1) ? expression2 : expression3;
 If expression1 is true, execute expression2, if false execute expression3
+
+
+
+
+Day 5:
+
+FUNCTIONS
+
+Every function has its own declaration (which we call prototype) and definiton.
+Declaration means we define type, name and parameters.
+In definition we write what that function does.
+
+There are three types of declaration.
+1) Prototype is in its own file and we include this file using #include
+2) Prototype is in file where is also definition
+3) Function's definition is just before another function calls it, in this case it is also its own declaration
+
+Every function has it's own return value, if we don't want to return any value we use type void.
+
+Global variable is accessable everywhere, if we have local variable with the same name global variable is suppressed.
+We shouldn't be using global variables unless we have to, because it can have catastrophic consequences
+
+We can return values in following examples:
+return 5;               // returns number
+return (x > 5);         // returns bool state true or false
+return (Function());    // returns number returned by Function
+
+Every code followed after word return will not work!
+
+Function main should be used with type int and always end with return 0 to meet ANSI standarts.
+
+FUNCTION OVERLOADING = POLYMORPHISM
+
+In c++ we can use function overloading which means we can use function with the same name but different types or number of arguments
+Example:
+int MyFunction(int, int);
+int MyFunction(long, long);
+int MyFunction(long);
+
+Compilator will use correct function based on amount of arguments and their types.
+
+WARNING: Two function with the same name and number of arguments and types but with different return type value will lead to error with compilation!
+We have to make sure that we change arguments or their types or name itself if necessary.
+
+INLINE FUCNTIONS
+
+If we use word inline before our function compilator will use body of this function and insert it everywhere in our code, which means program will be
+a little bit quicker, because it won't jump from function to function, but on the other hand program will be larger!
+
+RECURSION - two types, direct and indirect
+Direct recursion function calls itself.
+Indirect recursion calls another function which calls the first function
+
+ 
