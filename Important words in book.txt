@@ -67,31 +67,31 @@ KEY WORDS - We shouldn't use these as our variable name
     asm
     auto
     bool			- data type
-    break
-    case
+    break			- used for exiting the loop before the condition is false
+    case			- used in switch statement, if variable equals to case value, the following code will be executed
     catch
     char			- data type, 0 == false, any other number == true
     class			- new data type. it has its own methods and members
     const			- define new constant with specific type, number which won't change, can be used also for methods which don't change anything in it
     const_cast
-    continue
-    default
+    continue		- used when we need to return at the begining of the loop earlier then at the end of the loop, in that case code after continue won't be executed during that loop run
+    default			- used in switch, tells the program what to do if variable doesn't meet any of the case values
     delete
     do
     double			- data type
     dynamic_cast
-    else
+    else			- keyword used for conditions, if (condition) true do something, if it is false do something after the else statement
     enum			- declares new type and every enumerated type has it's own value starting from 0
     explicit
     export
     extern
     false			- 0 value used for boolean data types
     float			- data type
-    for
+    for				- loop type]
     friend
-    goto
-    if
-    inline
+    goto			- we shouln't be using this loop, it is dangerous in code and there are better loops like while, do while, for 
+    if				- used for conditions if something is true or false do something
+    inline			- keyword used when we want short function declaration part to be writen everywhere at the code when we call it, it saves time but also increases size 
     int				- data type
     long			- data type
     mutable
@@ -110,7 +110,7 @@ KEY WORDS - We shouldn't use these as our variable name
     static
     static_cast
     struct
-    switch
+    switch			- used when we want to make different results at different condition/value
     template
     this
     throw
@@ -126,7 +126,7 @@ KEY WORDS - We shouldn't use these as our variable name
     void			- type of function/method with no return values
     volatile
     wchar_t
-    while
+    while			- loop type
 
     and             - &&, when both expressions are true then operator is also true
     and_eq
@@ -221,7 +221,12 @@ Conditional (ternary) operator - ( ?: )
 (expression1) ? expression2 : expression3;
 If expression1 is true, execute expression2, if false execute expression3
 
+INCERMENT AND DECREMENT:
 
+If we want to add 1 to any variable, we can use ++, for example age++ or ++age
+If we want to decrease variable by 1, we can use --, for example --age or age--
+
+ 
 
 
 Day 5:
@@ -276,47 +281,52 @@ Indirect recursion calls another function which calls the first function
  
  
  
- Day 6: (OOP - Object oriented programming)
- 
- CLASSES
- 
- For declaration of new class uses key word class
- 
- New created object of class is called instance of that class.
- 
- Every class has its own public and private members or methods (functions). If not declared by default everything is private. 
- Data members should be private.
- Declaration of class is also called class interface.
- 
- Every method in class (as function) has to have a declaration and definition.
- We define methods as following:
- First we define its return type, then we use name of the class in which we have our method followed by two :: and name of the method after this we use brackets and inside arguments and their type.
- For Example we have class Car and we have method called Start()
- 
- Declaration in class: void Start() const
- Definition: void Car::Start() const
- 
- CONSTRUCTORS AND DESTRUCTORS
- 
- They are special methods in class where we can initialize private member variables
- They have the same name as a class but in destructor we use symbol ( ~ ) before the name e.g. ~Car(); 
- They can have different parameters but they DOONT HAVE a return type.
- Constructor and destructor without parametres are called default. Destructors don't have parameters at all.
- If we don't make our own default constructor and destructor for class compilator will make it itself. (We will not see it) 
- !!! If we declare our own constructor with parameter(s), compiler will not make defaul constructor !!! -> if we will need default constructor we have to write it at this point
- 
- CONST in Methods
- - we can use key word const at the end of the method if we are telling that this method will not change any vaule of member of that class.
- 
- HEADER FILES and SOURCE FILES
- 
- - Header file is used for class interface, declaration of class methods and private members
- - name.h -> Header file ends with .h or .hpp
- 
- - Source file is used for method implementation (how method works and do what they do)
- - name.cpp or name.c -> Source file ends with .cpp or .c
- 
- STRUCTURES
- 
- Structures are a way of storing many different values in variables of potentially different types under the same name.
- It is exactly the same thing as class, but in past they had no methods.
+Day 6: (OOP - Object oriented programming)
+
+CLASSES
+
+For declaration of new class uses key word class
+
+New created object of class is called instance of that class.
+
+Every class has its own public and private members or methods (functions). If not declared by default everything is private. 
+Data members should be private.
+Declaration of class is also called class interface.
+
+Every method in class (as function) has to have a declaration and definition.
+We define methods as following:
+First we define its return type, then we use name of the class in which we have our method followed by two :: and name of the method after this we use brackets and inside arguments and their type.
+For Example we have class Car and we have method called Start()
+
+Declaration in class: void Start() const
+Definition: void Car::Start() const
+
+CONSTRUCTORS AND DESTRUCTORS
+
+They are special methods in class where we can initialize private member variables
+They have the same name as a class but in destructor we use symbol ( ~ ) before the name e.g. ~Car(); 
+They can have different parameters but they DOONT HAVE a return type.
+Constructor and destructor without parametres are called default. Destructors don't have parameters at all.
+If we don't make our own default constructor and destructor for class compilator will make it itself. (We will not see it) 
+!!! If we declare our own constructor with parameter(s), compiler will not make defaul constructor !!! -> if we will need default constructor we have to write it at this point
+
+CONST in Methods
+- we can use key word const at the end of the method if we are telling that this method will not change any vaule of member of that class.
+
+HEADER FILES and SOURCE FILES
+
+- Header file is used for class interface, declaration of class methods and private members
+- name.h -> Header file ends with .h or .hpp
+
+- Source file is used for method implementation (how method works and do what they do)
+- name.cpp or name.c -> Source file ends with .cpp or .c
+
+STRUCTURES
+
+Structures are a way of storing many different values in variables of potentially different types under the same name.
+It is exactly the same thing as class, but in past they had no methods.
+
+
+
+
+Day 7: Program flow
