@@ -57,8 +57,8 @@ DATA TYPES
 Boolean						 True / False
 Character					 256 character values
 Integer						 -2 147 483 648 to 2 147 483 647          - unsigned 0 to 4 294 967 295
-Short Integer				 -32 768 to 32767                         - unsigned 0 to 65535 
-Long Integer				 -2 147 483 648 to 2 147 483 647          - unsigned 0 to 4 294 967 295
+Short Integer				 	-32 768 to 32767                         	  - unsigned 0 to 65535 
+Long Integer				 	-2 147 483 648 to 2 147 483 647           - unsigned 0 to 4 294 967 295
 Float						 1.2e-38 to 3.4e38
 Double						 2.2e-308 to 1.8e308
 
@@ -76,7 +76,7 @@ KEY WORDS - We shouldn't use these as our variable name
     const_cast
     continue		- used when we need to return at the begining of the loop earlier then at the end of the loop, in that case code after continue won't be executed during that loop run
     default			- used in switch, tells the program what to do if variable doesn't meet any of the case values
-    delete
+    delete			- used to free memory of variable created in junkyard, if we forget to do this we will have memory leaks
     do
     double			- data type
     dynamic_cast
@@ -87,16 +87,16 @@ KEY WORDS - We shouldn't use these as our variable name
     extern
     false			- 0 value used for boolean data types
     float			- data type
-    for				- loop type]
+    for			- loop type]
     friend
     goto			- we shouln't be using this loop, it is dangerous in code and there are better loops like while, do while, for 
-    if				- used for conditions if something is true or false do something
+    if			- used for conditions if something is true or false do something
     inline			- keyword used when we want short function declaration part to be writen everywhere at the code when we call it, it saves time but also increases size 
-    int				- data type
+    int			- data type
     long			- data type
     mutable
     namespace
-    new
+    new			- used when we want to create variable in junkyard accessible even after our function ends, similar to global variable, but we can control which functions get access to it
     operator
     private			- used for defining which methods or member variables in class are private (not accessable outside of class)
     protected
@@ -105,18 +105,18 @@ KEY WORDS - We shouldn't use these as our variable name
     reinterpret_cast
     return			- return back from void function or method and returns value in other functions
     short			- data type
-	signed			- data type with positive and also negative values
+    signed			- data type with positive and also negative values
     sizeof			- size of an object 
     static
     static_cast
-    struct
+    struct			- structures are a way of storing many different values in variables of potentially different types under the same name
     switch			- used when we want to make different results at different condition/value
     template
-    this
+    this			- this is a pointer to the actual object we are working with
     throw
     true			- 1 value used for boolean data types
     try
-    typedef			- used for making new aliases of some datatype
+    typedef		- used for making new aliases of some datatype
     typeid
     typename
     union
@@ -330,3 +330,39 @@ It is exactly the same thing as class, but in past they had no methods.
 
 
 Day 7: Program flow
+
+Go To, While, Break, Continue, While(true), Do While, For, Switch, Forever Loop, 
+
+
+
+
+Day 8: Pointers
+
+- variables which point to adress of an object
+- & symbol is used for adress, &variable will return adress of this variable
+- every pointer has to be initialized or at least set to nullptr
+
+int howOld = 50;
+int * pAge = 0;
+pAge = &howOld;
+
+it can also be initialized in the same line
+
+int * pAge = &howOld;
+
+(*) - dereference operator - we can use this operator to get the exact value stored at that adress of a pointer
+
+myAge = *pAge; // myAge will be 50 at this point
+
+Key words New and Delete are used for creating and storing data in junkyard
+If we delete some object we should set the pointer to 0 (NULL)
+It is safe to call delete on null pointer, if we call delete on pointer twice without setting it to nullptr our program will crash
+
+// 1 - Pointer to constant variable, we can't change the variable
+const int * pointer1 = nullptr;
+// 2 - Constant pointer, we can't change the adress this pointer is pointing to 
+int* const pointer2 = nullptr;
+// 3 - Both cases above together
+const int* const pointer3 = nullptr;
+
+
