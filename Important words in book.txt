@@ -366,3 +366,31 @@ int* const pointer2 = nullptr;
 const int* const pointer3 = nullptr;
 
 
+
+
+Day 9: References
+
+- reference is alias for a variable
+
+example initialization:
+int & r_reference = variable;
+
+there has to be an empty space between type and & but not between & and reference name
+reference has to be initialized right away otherwise we will get compiler error
+initialize all references!!!
+
+if we are using references we have to be careful, because we are working with the source
+and any modification done to that source is permanent, that is the difference between passing
+by value and passing by refrence or pointer
+to avoid any modification we can use keyword const
+
+
+Pointers vs References
+Most of the time references are better, they are more understandable and easier to use, but we can't change references!!!
+If we want to point to one object and then to another, we have to use pointers!
+References can't be null and if there is even an slightest chance that the object can be null we have to use pointer
+
+Example:
+int *p_int = new int;
+if (p_int != NULL)
+int &p_int = *p_int;

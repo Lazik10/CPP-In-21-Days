@@ -10,20 +10,20 @@
 #include "Day7.h"
 // Week 2
 #include "Day8.h"
+#include "Day9.h"
 
 using namespace std;
 
 int main()
-{   
+{
     // First compile test
     //cout << "Hello CMake!" << endl;
 
     cout << "Learning C++ In 21 Days\n\n" << endl;
-    Day8();
+    Day9();
 
     // Use this method twice because sometimes when we input something 
     // in the last called function it takes as if we input it here
-    getchar();
-    getchar();
+    // getchar();
     return 0;
 }

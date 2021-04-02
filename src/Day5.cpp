@@ -30,7 +30,6 @@ float Temperature(int fahrenheit)
 
 void ReturnExample()
 {
-    int result = 0;
     int input;
 
     cout << "Insert number between 0 and 100: ";
@@ -102,7 +101,7 @@ float Exercise9(unsigned short firstNumber, unsigned short secondNumber)
         cout << "You can't divide by zero!" << endl;
         return -1;
     }
-    else return firstNumber / secondNumber;
+    else return (firstNumber / secondNumber);
 }
 
 void Exercise10()

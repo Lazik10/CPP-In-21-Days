@@ -29,7 +29,7 @@ void Day3()
     unsigned short averageDawnfall = 500;
 
     // 3. and 4.)
-    const float PI = 3.14159;
+    const double PI = 3.14159;
     float myPi = PI;
 
 }

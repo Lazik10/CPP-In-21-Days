@@ -48,6 +48,12 @@ SOURCE_GROUP(Days FILES ${SC_DAYS})
 #FILE(GLOB_RECURSE days Days/*.cpp Days/*.h)
 #SOURCE_GROUP(Days FILES ${days})
 
+SET(SC_CLASSES
+	Cat.h
+	Cat.cpp)
+
+SOURCE_GROUP(Classes FILES ${SC_CLASSES})
+
 MESSAGE("  -> Prepared: Days")
 
 ADD_EXECUTABLE( 21Days main.cpp ${SC_DAYS})

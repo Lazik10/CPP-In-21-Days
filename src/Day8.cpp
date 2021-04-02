@@ -97,26 +97,6 @@ void MemoryLeakExample()
     *p_pointer = 82;
 }
 
-
-Cat::Cat()
-{
-    // constructor
-    std::cout << "Calling cat's constructor!\n";
-    _age = 5;
-    _name = "Cat";
-}
-
-Cat::Cat(std::string name)
-{
-    _name = name;
-}
-
-Cat::~Cat()
-{
-    // destructor
-    std::cout << "Calling " << _name << "'s destructor!\n";
-}
-
 void CreatingAndDeletingObjectsInJunkyard()
 {
     std::cout << "\n\nCreating cat Maya!\n";
