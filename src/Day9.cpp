@@ -15,7 +15,7 @@ void Day9()
     ExampleOfObjectCallings();
     CreatingCatAtHeapExample();
 
-    Excercise18();
+    Exercise18();
 }
 
 void ReferenceExample()
@@ -178,7 +178,7 @@ void CreatingCatAtHeapExample()
     //std::cout << "The cat's age is: " << r_cat.GetAge() << "\n";
 }
 
-void Excercise18()
+void Exercise18()
 {
     int variable = 0;
     std::cout << "Original variable value is: " << variable << "\n";

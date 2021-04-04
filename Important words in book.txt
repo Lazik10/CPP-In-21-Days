@@ -57,8 +57,8 @@ DATA TYPES
 Boolean						 True / False
 Character					 256 character values
 Integer						 -2 147 483 648 to 2 147 483 647          - unsigned 0 to 4 294 967 295
-Short Integer				 	-32 768 to 32767                         	  - unsigned 0 to 65535 
-Long Integer				 	-2 147 483 648 to 2 147 483 647           - unsigned 0 to 4 294 967 295
+Short Integer				 -32 768 to 32767                         - unsigned 0 to 65535 
+Long Integer				 -2 147 483 648 to 2 147 483 647          - unsigned 0 to 4 294 967 295
 Float						 1.2e-38 to 3.4e38
 Double						 2.2e-308 to 1.8e308
 
@@ -76,7 +76,7 @@ KEY WORDS - We shouldn't use these as our variable name
     const_cast
     continue		- used when we need to return at the begining of the loop earlier then at the end of the loop, in that case code after continue won't be executed during that loop run
     default			- used in switch, tells the program what to do if variable doesn't meet any of the case values
-    delete			- used to free memory of variable created in junkyard, if we forget to do this we will have memory leaks
+    delete			- used to free memory of variable created in heap, if we forget to do this we will have memory leaks
     do
     double			- data type
     dynamic_cast
@@ -87,19 +87,19 @@ KEY WORDS - We shouldn't use these as our variable name
     extern
     false			- 0 value used for boolean data types
     float			- data type
-    for			- loop type]
+    for				- loop type
     friend
     goto			- we shouln't be using this loop, it is dangerous in code and there are better loops like while, do while, for 
-    if			- used for conditions if something is true or false do something
+    if				- used for conditions if something is true or false do something
     inline			- keyword used when we want short function declaration part to be writen everywhere at the code when we call it, it saves time but also increases size 
-    int			- data type
+    int				- data type
     long			- data type
     mutable
     namespace
-    new			- used when we want to create variable in junkyard accessible even after our function ends, similar to global variable, but we can control which functions get access to it
+    new				- used when we want to create variable in heap accessible even after our function ends, similar to global variable, but we can control       which functions get access to it
     operator
     private			- used for defining which methods or member variables in class are private (not accessable outside of class)
-    protected
+    protected		- protected variables or methods are usable only by derived classes, but for the rest of the code it is hidden/encapsulated
     public			- used for defining which methods or member variables in class are public
     register
     reinterpret_cast
@@ -116,7 +116,7 @@ KEY WORDS - We shouldn't use these as our variable name
     throw
     true			- 1 value used for boolean data types
     try
-    typedef		- used for making new aliases of some datatype
+    typedef			- used for making new aliases of some datatype
     typeid
     typename
     union
@@ -354,7 +354,7 @@ int * pAge = &howOld;
 
 myAge = *pAge; // myAge will be 50 at this point
 
-Key words New and Delete are used for creating and storing data in junkyard
+Key words New and Delete are used for creating and storing data in heap
 If we delete some object we should set the pointer to 0 (NULL)
 It is safe to call delete on null pointer, if we call delete on pointer twice without setting it to nullptr our program will crash
 
@@ -394,3 +394,51 @@ Example:
 int *p_int = new int;
 if (p_int != NULL)
 int &p_int = *p_int;
+
+
+
+
+Day 10: Advanced Functions
+
+- Function overloading - this means that we create functions with the same name, but different arguments
+we should use function overloading when there is no inteligent default value, if we need to do different type of algorythm or
+if we need to differentiate types of arguments
+
+- Constructors have 2 phases, initialization and declaration
+
+- Copy constructors - if we copy object, we copy all member variables into another object, that is fine unless that object has 
+a member pointer variable, because both objects would point into the same memory space/address
+then if any of the objects gets deleted, it will also deallocate the memory for pointer of that object and since both objects pointed to the
+same memory address we have a problem, to solve this problem we have to create our own copy constructor
+
+Shallow vs Deep copy
+
+Initialization of objects:
+Object_class():
+member_variable(initialization), another_member_variable(initialization)
+{
+	// ... constructor code
+}
+
+- Operator overloading
+we are able overload all known operators to perform object tasks, for example add one object to another, or substract one object from another
+we can also overload incrementation (x++), decrementation (x--) or assignemt (=)
+difference between postfix and prefix is that argument in function name is int type 
+postfix Class& operator+();        // using reference heare saves us creating another copy of our object 
+prefix  Class& operator+(int);
+
+Class operator+(const Class& instance);
+Class operator-(const Class& instance);
+Class operator/(const Class& instacen);
+Class operator*(const Class& instance);
+Class operator==(const Class& instance);
+
+- Operator data conversion
+operator unsigned short();
+
+Class::operator unsigned short()
+{
+	return ( int (_m_data));
+}
+
+in this case, we can assign Class object to unsigned short int variable

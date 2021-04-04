@@ -23,4 +23,4 @@ void FactorialExample();
 void ExampleOfObjectCallings();
 void CreatingCatAtHeapExample();
 
-void Excercise18();
+void Exercise18();
