@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "Animal.h"
 
-class Cat
+class Cat : public Animal
 {
 public:
     // Ctor
@@ -12,8 +13,10 @@ public:
     Cat(std::string name);
     // Copy ctor
     Cat(const Cat& cat);
+    // Clone
+    Cat* Clone() override;
     // Destructor
-    ~Cat();
+    virtual ~Cat();
 
     Cat PassingByObject(Cat cat);
     Cat* PassingByPointerToObject(Cat* cat);
@@ -45,6 +48,8 @@ public:
     bool operator==(const Cat& cat);
     // conversion to another data type
     operator unsigned short();
+
+    void MakeSound() const override;
 
     // Methods used below are only used in examples what we should never do
     Cat& CreatCatAtHeap();

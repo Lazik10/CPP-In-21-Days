@@ -2,15 +2,33 @@
 
 #include <iostream>
 
-class Rectangle
+class Shape
+{
+public:
+    Shape();
+    virtual ~Shape();
+
+    Shape(const Shape& shape);
+    virtual Shape* Clone() const;
+
+    virtual void Draw() const;
+
+private:
+
+};
+
+class Rectangle : public Shape
 {
 public:
 	Rectangle();
 	Rectangle(int width, int height);
-	~Rectangle();
+	virtual ~Rectangle();
+
+    Rectangle(const Rectangle& rectangle);
+    Rectangle* Clone() const;
 
 	// Overloaded member functions
-	void DrawRectangle() const;
+	void Draw() const override;
 	void DrawRectangle(int width, int height) const;
 	void DrawRectangle(int width, int heigth, bool actual) const;
 
@@ -19,10 +37,22 @@ private:
 	int _height;
 };
 
+class Square : public Rectangle
+{
+public:
+    Square();
+    Square(int _width);
+    virtual ~Square();
+
+    void Draw() const override;
+private:
+
+};
+
 class Circle
 {
 public:
-	Circle();
+    Circle();
 	Circle(float radius);
 	~Circle();
 

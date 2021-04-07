@@ -29,18 +29,23 @@ Cat::Cat(std::string name)
 }
 
 Cat::Cat(const Cat& cat):
-    _age(cat._age),_height(cat._height), _weight(cat._height)
+    Animal(cat), _age(cat._age),_height(cat._height), _weight(cat._height)
 {
     // Shallow copy
     // if our class has pointer member variable it would point to the same location
     // which can lead to an error in our code when we destroy the origin object
-    std::cout << "Calling Cat's copy ctor\n";
+    std::cout << "Copy constructor of a cat\n";
 
     // Deep copy
     // to prevent that we have to do the deep copy, which means for every pointer member variable 
     // we need to create another memory space in heap
     _number_of_kittens = new int;
     *_number_of_kittens = *cat._number_of_kittens;
+}
+
+Cat* Cat::Clone()
+{
+    return new Cat(*this);
 }
 
 Cat::~Cat()
@@ -139,6 +144,11 @@ bool Cat::operator==(const Cat& cat)
 Cat::operator unsigned short()
 {
     return (unsigned short int(_age));
+}
+
+void Cat::MakeSound() const
+{
+    std::cout << "Meow, Meow, Meow...\n";
 }
 
 Cat& Cat::CreatCatAtHeap()

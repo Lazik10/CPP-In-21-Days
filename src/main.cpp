@@ -13,6 +13,7 @@
 #include "Day9.h"
 #include "Day10.h"
 #include "Day11.h"
+#include "Day12.h"
 
 using namespace std;
 
@@ -22,7 +23,7 @@ int main()
     //cout << "Hello CMake!" << endl;
 
     cout << "Learning C++ In 21 Days\n\n" << endl;
-    Day11();
+    Day12();
 
     // Use this method twice because sometimes when we input something 
     // in the last called function it takes as if we input it here

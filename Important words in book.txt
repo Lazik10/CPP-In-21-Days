@@ -442,3 +442,51 @@ Class::operator unsigned short()
 }
 
 in this case, we can assign Class object to unsigned short int variable
+
+
+
+
+Day 11: OO analysis and design
+
+
+
+
+Day 12: Inheritance
+
+base class vs derived class
+
+Inheritance - if we make derived class from base class, that derived class can use all base class member functions and data members
+Let say we have base class Animal with method void Speak() { " Speaking "} and derived class Cat, if we make instance of an object Cat
+ we can also use the method Speak()
+
+Function override - if we want to use method Speak it will say "Speaking", it inherits the function, but if we want to make the cat say " Meow "
+we have to declare another function void Speak() { "Meow "}; in Cat class, now if we create instance of an object Cat it will say " Meow "
+
+Now the problem with this is if we make pointer of class Animal pointion go object of a Cat and use the method Speak() it will say { "Speaking" }
+which is not what we wanted, or maybe we did, but if we want to make the cat say "Meow" as it is expected we need to override the function Speak()
+To do that we need to prefix the function in base class with word virtual and also it since C++11 it is good to use keyword override behind function name in
+that derived class
+
+NOTE!!! - If ve create another function in derived class with the same name as in base class we "hide" that function from base class for derived class
+and it doesn't matter if the function has different parameters, we will hide all of them, so if we want to use the other ones we need to also override them in
+derived class
+
+But/Or we can always access that specific function with class prefix, in this case Animal::Speak();
+
+Virtual functions only work with pointers or references, if we pass the object as a value it will use the Speak function from the data type we use for passing
+
+If we have virtual functions we also need to have virtual destructor, it will call the correct destructor and if derived class destructor is called it is also called
+the base class destructor
+
+Virtual copy constructors - constructors can't be virtual so there is not default implemented virtual copy method, in some cases you need to pass pointer to
+base class of that object and get a copy of the correct derived object, to do that you can create your own method (usually named Clone) in base class and make it
+virtual
+
+Warning:
+void Foo(Class a);
+Class* p_a = new DerivedClass();
+Foo(*p_a);
+
+Another example where we pass argument as a value and in that case we only pass Class part of that object (not the derived part)
+so if we only need Class data members/methods in Foo function everything will be ok, but if we need to use derivet part of that object we need to
+change the Foo function to tak a Class pointer as an argument!!!

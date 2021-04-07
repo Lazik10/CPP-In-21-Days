@@ -1,7 +1,35 @@
 #include "Geometry.h"
 
+Shape::Shape()
+{
+    std::cout << "Shape's constructor...\n";
+}
+
+Shape::~Shape()
+{
+    std::cout << "Shape's destructor...\n";
+}
+
+Shape::Shape(const Shape& shape)
+{
+    std::cout << "Shape's copy constructor...\n";
+}
+
+Shape* Shape::Clone() const
+{
+    std::cout << "Clone method creating new Shape object based on current object data members...\n"
+        "also calling Shape constructor";
+    return new Shape(*this);
+}
+
+void Shape::Draw() const
+{
+    std::cout << "Drawing shape...\n";
+}
+
 Rectangle::Rectangle()
 {
+    std::cout << "Rectangle's constructor...\n";
     _width = 5;
     _height = 10;
 }
@@ -14,10 +42,25 @@ Rectangle::Rectangle(int width, int height):
 
 Rectangle::~Rectangle()
 {
+    std::cout << "Rectangle's destructor...\n";
 }
 
-void Rectangle::DrawRectangle() const
+Rectangle::Rectangle(const Rectangle& rectangle) :
+    Shape()
 {
+    std::cout << "Rectangle's copy constructor...\n";
+}
+
+Rectangle* Rectangle::Clone() const
+{
+    std::cout << "Clone method creating new Rectangle object based on current object data members...\n"
+        "also calling Shape constructor";
+    return new Rectangle(*this);
+}
+
+void Rectangle::Draw() const
+{
+    std::cout << "Drawing rectangle...\n";
     DrawRectangle(_width, _height);
 }
 
@@ -90,4 +133,25 @@ Circle& Circle::operator=(const Circle circle)
     std::cout << "\nAddress of m_raidus is: " << m_radius << "\nand adress of circle is: " << &circle.m_radius;
     *m_radius = *circle.m_radius;
     return *this;
+}
+
+Square::Square()
+{
+    std::cout << "Square's constructor...\n";
+}
+
+Square::Square(int _width) :
+    Rectangle(_width, _width)
+{
+
+}
+
+Square::~Square()
+{
+    std::cout << "Square's destructor...\n";
+}
+
+void Square::Draw() const
+{
+    std::cout << "Drawing circle...\n";
 }

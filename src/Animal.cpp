@@ -1,28 +1,27 @@
 #include "Animal.h"
 
-Animal::Animal()
+Animal::Animal() :
+    m_age(1), m_health(Health::HEALTHY), m_height(1),
+    m_weight(1), m_gender(Gender::MALE)
 {
-    std::cout << "Creating new animal" << std::endl;
+    std::cout << "Calling animal's constructor!" << std::endl;
 }
 
-Animal::Animal(int age)
+Animal::Animal(int age) :
+    m_age(age)
 {
-    myAge = age;
     MakeRandomGender();
 }
 
-Animal::Animal(int age, int weight)
+Animal::Animal(int age, int weight) :
+    m_age(age), m_weight(weight)
 {
-    myAge = age;
-    myWeight = weight;
     MakeRandomGender();
 }
 
-Animal::Animal(int age, int weight, int height)
+Animal::Animal(int age, int weight, int height) :
+    m_age(age), m_weight(weight), m_height(height)
 {
-    myAge = age;
-    myWeight = weight;
-    myHeight = height;
     MakeRandomGender();
 }
 
@@ -30,31 +29,23 @@ Animal::~Animal()
 {
 }
 
-void Animal::MakeSound()
+Animal::Animal(const Animal& animal) :
+    m_age(animal.m_age)
 {
-    std::cout << "I am making sound!" << std::endl;
+
 }
 
-void Animal::SetAge(int age)
+void Animal::MakeSound() const
 {
-    myAge = age;
+    std::cout << "I am making animal sound...\n";
 }
 
-void Animal::SetWeight(int weight)
+void Animal::Sleep() const
 {
-    myWeight = weight;
-}
-
-void Animal::SetHeight(int height)
-{
-    myHeight = height;
-}
-
-void Animal::SetGender(bool gender)
-{
-    gender = MALE;
+    std::cout << "The animal is sleeping.\n";
 }
 
 void Animal::MakeRandomGender()
 {
+    m_gender = Gender::MALE;
 }

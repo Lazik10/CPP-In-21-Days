@@ -14,7 +14,7 @@ void OverloadedFunctionExample()
 {
     Rectangle rec(10, 5);
     std::cout << "DrawRectangle(): \n";
-    rec.DrawRectangle();
+    rec.Draw();
     std::cout << "DrawRectangle(50,50): \n";
     rec.DrawRectangle(5, 10);
 }
