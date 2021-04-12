@@ -490,3 +490,32 @@ Foo(*p_a);
 Another example where we pass argument as a value and in that case we only pass Class part of that object (not the derived part)
 so if we only need Class data members/methods in Foo function everything will be ok, but if we need to use derivet part of that object we need to
 change the Foo function to tak a Class pointer as an argument!!!
+
+
+
+
+Day 13: Arrays and linked lists
+
+- Array is a collection of elements of the same data type
+example: int Array[20];  first is data type, name of the array and in brackets we have declared how long that array is, these numbers are called indexes
+Index of an array starts at number 0, so first element is array[0], second is array[1] and so on, in general if we have array of n elements, to access 
+the last element we need to go to position n-1
+
+- Arrays can have multiple dimensions, but the most common are 1D, 2D and 3D
+
+- Arrays can be stored at heap as well as any other variable
+Cat *family = new Cat[500];
+
+One more time recap:
+Cat array[n];				- array of n-cats, pointer to an array of cats (pointing to first element)
+Cat* array[n];				- array of n-number of pointers
+Cat* array = new Cat[n];	- is a pointer pointing to an array of n-cats at heap
+
+Array of characters / String
+-------------------------------------------------------------------
+last character in char array is \0, so we can know where the string ends
+due to this the char* sentence[] = {"Hello"}; would be 6 characters long - Hello\0
+
+array names are constant pointers to first element of the array
+
+Strings are arrays of characters, usually passing member variable with length value and storing \0 at last position
