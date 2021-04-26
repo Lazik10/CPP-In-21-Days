@@ -44,16 +44,37 @@ SET(SC_DAYS
 	
 SOURCE_GROUP(Days FILES ${SC_DAYS})
 
+MESSAGE("  -> Prepared: Days")
+
 # Another option how to include all files
 #FILE(GLOB_RECURSE days Days/*.cpp Days/*.h)
 #SOURCE_GROUP(Days FILES ${days})
 
 SET(SC_CLASSES
+	Animal.h
+	Animal.cpp
+	Bird.h
+	Bird.cpp
 	Cat.h
-	Cat.cpp)
+	Cat.cpp
+	Dog.h
+	Dog.cpp
+	Employee.h
+	Employee.cpp
+	Geometry.h
+	Geometry.cpp
+	Horse.h
+	Horse.cpp
+	LinkedList.h
+	LinkedList.cpp
+	Pegas.h
+	Pegas.cpp
+	String.h
+	String.cpp
+	)
 
 SOURCE_GROUP(Classes FILES ${SC_CLASSES})
 
-MESSAGE("  -> Prepared: Days")
+MESSAGE("  -> Prepared: Classes")
 
-ADD_EXECUTABLE( 21Days main.cpp ${SC_DAYS})
+ADD_EXECUTABLE( 21Days main.cpp ${SC_DAYS} ${SC_CLASSES})

@@ -79,7 +79,7 @@ KEY WORDS - We shouldn't use these as our variable name
     delete			- used to free memory of variable created in heap, if we forget to do this we will have memory leaks
     do
     double			- data type
-    dynamic_cast
+    dynamic_cast	- evaluating if our object is from derived class or not, in other words trying to do what only derived class can do, syntax is DerivedClass* p_name = dynamic_cast<DerivedC;ass*> (BaseObject instance);
     else			- keyword used for conditions, if (condition) true do something, if it is false do something after the else statement
     enum			- declares new type and every enumerated type has it's own value starting from 0
     explicit
@@ -122,7 +122,7 @@ KEY WORDS - We shouldn't use these as our variable name
     union
     unsigned		- data type with only positive values
     using
-    virtual
+    virtual			- virtual function in base class can be overwriten in derived classes and objects will automatically use the correct function
     void			- type of function/method with no return values
     volatile
     wchar_t
@@ -519,3 +519,35 @@ due to this the char* sentence[] = {"Hello"}; would be 6 characters long - Hello
 array names are constant pointers to first element of the array
 
 Strings are arrays of characters, usually passing member variable with length value and storing \0 at last position
+
+
+
+
+Day 14: Polymorphism
+
+RTTI - Run Time Type Identification
+
+Multiple Inheritance - One class can be derived from two different base classes
+
+ADT - Abstract data type
+Pure abstract class is class with ONE or MORE virtual functions that has = 0 after it's own prototype declaration
+e.g. virtual void Draw() = 0;
+if a class is abstract, you can't create instances of that class
+
+Multiple inheritance - if one class is derived from two derived classes which has the same base class, the derived class will have members of 
+base class twice and that would lead to ambiguous behavior, to prevent that we need to declare the base class as virtual
+The derived class will now have only one base class
+
+for exmaple:
+
+class Animal
+class Dog: virtual public Animal
+class Cat: cirtual public Animal
+class CatDog: public Cat, public Dog
+
+Multiple inheritance has some benefits, but in larger scale it's is not commonly used and everything you can do with 
+multiple inheritance you can also do with simple inheritance
+
+Class of functions - sometimes you just need some methods to be available for your class without overcomplicating your class structure
+and multiple inheritance, that is the solution to that
+
