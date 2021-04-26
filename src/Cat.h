@@ -50,10 +50,13 @@ public:
     operator unsigned short();
 
     void MakeSound() const override;
+    void Eat() const;
+    void Sleep() const;
 
     // Methods used below are only used in examples what we should never do
     Cat& CreatCatAtHeap();
 
+    static int number_of_cats;
 private:
     int _age;
     int _height;

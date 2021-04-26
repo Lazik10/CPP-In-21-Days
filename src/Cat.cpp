@@ -1,5 +1,7 @@
 #include "Cat.h"
 
+int Cat::number_of_cats = 0;
+
 Cat::Cat() :
     _age(5), _name("Cat"), _weight(0), _height(0)
 {
@@ -149,6 +151,16 @@ Cat::operator unsigned short()
 void Cat::MakeSound() const
 {
     std::cout << "Meow, Meow, Meow...\n";
+}
+
+void Cat::Eat() const
+{
+
+}
+
+void Cat::Sleep() const
+{
+
 }
 
 Cat& Cat::CreatCatAtHeap()

@@ -551,3 +551,26 @@ multiple inheritance you can also do with simple inheritance
 Class of functions - sometimes you just need some methods to be available for your class without overcomplicating your class structure
 and multiple inheritance, that is the solution to that
 
+
+
+
+Day 15: Special classes and functions
+
+Static variable - this variable is shared for every object instance of that class
+Static member functions - they don't have -this- pointer, because it's not binded to exact instance of an object, that is also why they can't be declared as const
+we can't access private class member variables with static functions directly only static member variables
+We can call static member function with and object or without and object with its full class specification
+
+int how_many;
+Cat cat;
+how_many = cat.HowMany();  // access with an object instance
+how_many = Cat::HowMany(); // access withoout an object
+
+
+Pointers to functions
+----------------------
+
+declared as: return type (* FunctionName) (arg1, arg2, arg3);
+in this case it is better to use typedef
+
+for example:  typedef void (Cat::* p_CF)() const; - type is now p_CF
