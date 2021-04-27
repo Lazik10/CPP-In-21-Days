@@ -88,7 +88,7 @@ KEY WORDS - We shouldn't use these as our variable name
     false			- 0 value used for boolean data types
     float			- data type
     for				- loop type
-    friend
+    friend			- friend class name; - declares a friend class which has access to private methods and member variables, but not my access to friend class 
     goto			- we shouln't be using this loop, it is dangerous in code and there are better loops like while, do while, for 
     if				- used for conditions if something is true or false do something
     inline			- keyword used when we want short function declaration part to be writen everywhere at the code when we call it, it saves time but also increases size 
@@ -107,7 +107,7 @@ KEY WORDS - We shouldn't use these as our variable name
     short			- data type
     signed			- data type with positive and also negative values
     sizeof			- size of an object 
-    static
+    static			- static member variable is used as a global variable only for that class, and only static functions can access astatic variable
     static_cast
     struct			- structures are a way of storing many different values in variables of potentially different types under the same name
     switch			- used when we want to make different results at different condition/value
@@ -574,3 +574,60 @@ declared as: return type (* FunctionName) (arg1, arg2, arg3);
 in this case it is better to use typedef
 
 for example:  typedef void (Cat::* p_CF)() const; - type is now p_CF
+
+
+
+
+Day 16: Advanced inheritance
+
+types of inheritances: public, private, protected
+
+class A 
+{
+    public:
+       int x;
+    protected:
+       int y;
+    private:
+       int z;
+};
+
+class B : public A
+{
+    // x is public
+    // y is protected
+    // z is not accessible from B
+};
+
+class C : protected A
+{
+    // x is protected
+    // y is protected
+    // z is not accessible from C
+};
+
+class D : private A    // 'private' is default for classes
+{
+    // x is private
+    // y is private
+    // z is not accessible from D
+};
+
+with public, derived class inherits all data members and has access to all except of private
+with protected, derived class inherits all data members and has access to all of class A except of private members, but another derived class from this class will
+have access to public and protected data members of base class
+with private, derived class inherits all data members and has access to all members except the private onse, but another derived class won't have access to
+any of the base class data members
+
+Friend Class: 
+
+friend class name; 
+- declares a friend class which has access to private methods and member variables of this class, but not access to that friend class
+- friendship is not inherited
+
+Friend Function:
+
+- is a function which has direct access to all class members and can be called standalone, we don't need specific oject to call this function
+- it can be a member of another class or global function
+
+- friend keyword specifies what has access to this class members (whole class or just function from another class, or global function) 
