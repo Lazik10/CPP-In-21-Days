@@ -630,4 +630,139 @@ Friend Function:
 - is a function which has direct access to all class members and can be called standalone, we don't need specific oject to call this function
 - it can be a member of another class or global function
 
-- friend keyword specifies what has access to this class members (whole class or just function from another class, or global function) 
+- friend keyword specifies what has access to this class members (whole class or just function from another class, or global function)
+
+
+
+
+Day 17: Streams
+
+Streams and buffer:
+
+implemented by oop classes
+
+Class streambuff - handles cache memory and works with buffer, their member functions allow as to fill or erase buffer
+Class ios - is a base class of output and input classes, it has streambuff class as a member variable
+Class istream and ostream - are derived classes and specialize behavior of input and output streams
+Class iostream - is derived class from both istream and ostream and allow us to use methods for input and output on a screen
+Class fstream - handles input and output to files
+
+iostream library is added to our program automatically, we just need to include
+#include <iostream> 
+
+cin - handles input from a standart input (keyboard)
+cout - handles output into a standart output (monitor)
+cerr - handles outpit without cache, everything sent into cerr is visible immediately, it doesn't wait for buffer to be filled or flushed
+clog - handles error messages and sends them into the cache, which is then sent into a monitor, usually it 
+
+redirection -> means that our default input or output will be changed
+our output can also be an input for something else
+
+cin automatically ends a string by null char \0, so you need to have space in your buffer for all the chars and also for this null char at the end
+
+STD::CIN
+cin.get();
+cin.getline();
+cin.ignore();
+cin.peek();
+cin.putback(); 
+
+STD::COUT
+cout.put();
+cout.write();
+cout.width();
+cout.fill();
+
+cout.setf()
+
+printf()
+---------
+
+    %s - strings
+    %d - int numbers
+    %l - long int numbers
+    %ld - long double numbers
+    %f - float numbers
+	
+Output Formating:
+-----------------
+
+    \n - new line
+    \r - cursor return
+    \t - tab
+    \\ - backslash
+    \ddd - octal number (ASCI)
+    \a - ring/bell/beep
+
+    // Manipulators without needing <iomanip>
+    flush - empty output buffer
+    endl - new line
+    oct - sets output to octal numbers
+    dec - sets output to decimal numbers
+    hex - sets output to hexadecimal numbers
+
+    // Manipulators with need of <iomanip>
+    setbase() - set base output (0 - decimal, 8 - octal, 10 - decimal, - 16 hexadecimal)
+    setw() - sets minimal output width
+    setfill() - sets fill sign
+    setprecision() - sets precision for float numbers
+    setiosflags() - sets one or more output flags
+    resetiosflags() - resets one or more output flags
+
+    // set/reset iosflags - FLAGS
+    ios::left - sets output alignment to left
+    ios::right - sets output alignment to right
+    ios::internal - sign is alingment to left and value to right
+    ios::hex - hexadecimal output
+    ios::dec - decimal output
+    ios::oct - octal output
+    ios::showbase - adds 0x before hexadecimal number and 0 before octal number
+    ios::showpoint - adds required zeros by specified precision
+    ios::uppercase - hexadecimal numbers and scientific numbers use upper letters
+    ios::showpos - shows plus before positive numbers
+    ios::scientific - scientific number notation
+    ios::fixed - floating number value is showed in base notation not scientific
+	
+File operations
+---------------
+
+    eof() - returns true if you reached end in iostream object
+    bad() - returns true if you try not accessible operation
+    fail() - returns true if everytime function bad() is true or some other operation fails
+    good() - returns true if all other functions return are fail
+
+    if(inputFile.fail()) is the same as if(!inputFile) and if(inputeFile.good()) is the same as if(inputFile)
+	
+File flags
+-----------
+	
+	ios::app - adds content at the end of current content without deleting it
+    ios::ate - 
+    ios::trunc - default, content replaces the old content
+    ios::nocreate - if specified file does not exists opening fails
+    ios::noreplace - if specified file already exists opening fails
+
+    By default when opening file it is created if it doesn't already exists and the
+    content of that file is deleted if the file already exists, to avoid this default behaviour
+    we can use these flags
+
+Binary files
+------------
+	
+std::ofstream fout(fileName, std::ios::binary);
+Class name(10, 100);
+// binary write - stores data structure of objects
+fout.write((char*)&name, sizeof namel);
+
+std::ifstream fin(fileName, std::ios::binary);
+// binary read - can load data structure of objects
+fin.read((char*)&animal2, sizeof animal2);	
+	
+
+Main function with arguments
+----------------------------	
+int main(int argc, char* argv[]) // argv can be declared as char* [argv][] or char** argv
+{
+    // argc - argument count in command line
+    // argv - argument vector 
+}

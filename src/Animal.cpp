@@ -30,7 +30,8 @@ Animal::~Animal()
 }
 
 Animal::Animal(const Animal& animal) :
-    m_age(animal.m_age)
+    m_age(animal.m_age), m_weight(animal.m_weight), m_height(animal.m_height),
+    m_gender(animal.m_gender), m_health(animal.m_health)
 {
 
 }

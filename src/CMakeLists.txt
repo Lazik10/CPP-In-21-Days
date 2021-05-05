@@ -69,6 +69,8 @@ SET(SC_CLASSES
 	LinkedList.cpp
 	Pegas.h
 	Pegas.cpp
+	Review.h
+	Review.cpp
 	String.h
 	String.cpp
 	)

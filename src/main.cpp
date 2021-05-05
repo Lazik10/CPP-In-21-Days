@@ -20,16 +20,18 @@
 // Week 3
 #include "Day15.h"
 #include "Day16.h"
+#include "Day17.h"
 
-using namespace std;
-
-int main()
+int main(int argc, char* argv[]) // argv can be declared as char* [argv][] or char** argv
 {
+    // argc - argument count in command line
+    // argv - argument vector 
+
     // First compile test
     //cout << "Hello CMake!" << endl;
 
-    cout << "Learning C++ In 21 Days\n\n" << endl;
-    Day16();
+    std::cout << "Learning C++ In 21 Days\n\n" << std::endl;
+    Day17();
 
     // Use this method twice because sometimes when we input something 
     // in the last called function it takes as if we input it here
