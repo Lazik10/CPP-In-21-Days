@@ -77,14 +77,14 @@ KEY WORDS - We shouldn't use these as our variable name
     continue		- used when we need to return at the begining of the loop earlier then at the end of the loop, in that case code after continue won't be executed during that loop run
     default			- used in switch, tells the program what to do if variable doesn't meet any of the case values
     delete			- used to free memory of variable created in heap, if we forget to do this we will have memory leaks
-    do
+    do				- do while loop (do first and after that check for condition)
     double			- data type
     dynamic_cast	- evaluating if our object is from derived class or not, in other words trying to do what only derived class can do, syntax is DerivedClass* p_name = dynamic_cast<DerivedC;ass*> (BaseObject instance);
     else			- keyword used for conditions, if (condition) true do something, if it is false do something after the else statement
     enum			- declares new type and every enumerated type has it's own value starting from 0
     explicit
     export
-    extern
+    extern			- allows us to use the same variable name with the same type through different files
     false			- 0 value used for boolean data types
     float			- data type
     for				- loop type
@@ -766,3 +766,15 @@ int main(int argc, char* argv[]) // argv can be declared as char* [argv][] or ch
     // argc - argument count in command line
     // argv - argument vector 
 }
+
+
+
+
+Day 18: Namespaces
+
+intern and extern
+
+
+by default const names are intern, but it is possible to override them to extern
+
+we shouldn't use static for variable names in global file scope
