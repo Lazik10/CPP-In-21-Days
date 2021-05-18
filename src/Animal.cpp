@@ -50,3 +50,9 @@ void Animal::MakeRandomGender()
 {
     m_gender = Gender::MALE;
 }
+
+std::ostream& operator<<(std::ostream& output, const Animal& animal)
+{
+    output << animal.GetAge();
+    return output;
+}

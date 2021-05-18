@@ -772,9 +772,127 @@ int main(int argc, char* argv[]) // argv can be declared as char* [argv][] or ch
 
 Day 18: Namespaces
 
-intern and extern
+namespace Name
+{
+	namespace Name2
+	{
+		void FunctionName();
+	}
+}
 
+Namespaces are used to resolve naming conflicts
+Namesapces can be nested
+to access specific function we use Name::Name2::FunctionName();
+
+
+intern and extern
+------------------
+extern variables are used when we want to work with the same variable outside of the file scope
 
 by default const names are intern, but it is possible to override them to extern
 
 we shouldn't use static for variable names in global file scope
+
+
+using directive - is used when we don't want to specify that namespace, it already brings our variable, class and function names
+to global access, on the other hand it also can bring back are naming conflicts, that is why using namespace std; is a bad practise
+
+vs:
+
+using declaration - using Name::Name2::FunctionName();
+we can now use just FunctionName();
+
+
+Namespace Alias
+---------------
+namespace N = Name;
+N::Name2::FunctionName();
+
+
+If we want to use global variables with the same name in two different compile files we can use unnamed namespace, to resolve conflicts
+
+
+
+
+Day 19: Templates
+
+- template is basicaly a class with methods, but instead of creating specific class we create template for different types of classes
+that way we can use that function with different classes and we don't have to write multiple lines of code twice just for another class
+
+Definition of templates is as following:
+
+template <class T>
+class ClassName
+{
+public:
+	ClassName();
+	~ClassName();
+	
+	
+};
+
+key word template is used at the begining of every declaration and definition of a class template 
+parameters of templates are following the keyword tempalte and they can change in exact different instances
+for example one instance can store type int and second can store some class type objects
+
+if we want to declare these instance we can do that this way:
+ClassName<int> instance;
+ClassName<ClassName2> instance2;
+
+Both declaration and definiton of a template has to be in the same file, that is main difference betweens classes and templates
+
+
+Tamplate and friendship:
+- friend class or function outside of a template
+- general friend class or function of another template **
+- type specific friend class or template function
+
+**when using friend templated function we need to use template <class T> above the friend keyword
+
+// someAnimal = (Animal) 0
+When we are adding a new object into an templated array we call default constructor of that object, constructor of that array is assigning a 
+default zero value to all members of an array which means its calling default constructor of a class and it creates a default object of that class 
+with constructor which takes a int number (zero). This temporary object is used as a right hand side of = oprator and then it's deleted, which is
+wasting time, to avoid this, we can create special constructor for that class array.
+
+Static members and templates:
+- we can declare static members in templates as well
+- each instance of that template has its own set of static members, one for each type
+
+STL - Standart Template Library
+
+Container class templates
+
+
+Sequence containers:
+array 
+vector
+deque
+forward_list 
+list
+
+
+Container adaptors:
+
+stack
+queue
+priority_queue
+
+
+Associative containers:
+
+set
+multiset
+map
+multimap
+
+
+Unordered associative containers:
+
+unordered_set 
+unordered_multiset 
+unordered_map 
+unordered_multimap 
+
+
+Iterator - used for going through the containers, dereference of iterator returns our object stored in container

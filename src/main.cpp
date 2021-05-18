@@ -22,6 +22,7 @@
 #include "Day16.h"
 #include "Day17.h"
 #include "Day18.h"
+#include "Day19.h"
 
 int externint = 5;
 
@@ -34,7 +35,7 @@ int main(int argc, char* argv[]) // argv can be declared as char* [argv][] or ch
     //cout << "Hello CMake!" << endl;
 
     std::cout << "Learning C++ In 21 Days\n\n" << std::endl;
-    Day18();
+    Day19();
 
     // Use this method twice because sometimes when we input something 
     // in the last called function it takes as if we input it here

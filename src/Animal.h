@@ -48,6 +48,8 @@ public:
     virtual void MakeSound() const;
     void Sleep() const;
 
+    friend std::ostream& operator<<(std::ostream& output, const Animal& animal);
+
 protected:
     void MakeRandomGender();
 

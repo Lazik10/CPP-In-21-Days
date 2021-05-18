@@ -73,6 +73,8 @@ SET(SC_CLASSES
 	Review.cpp
 	String.h
 	String.cpp
+	Template.h
+	Template.cpp
 	)
 
 SOURCE_GROUP(Classes FILES ${SC_CLASSES})
