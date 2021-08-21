@@ -69,7 +69,7 @@ KEY WORDS - We shouldn't use these as our variable name
     bool			- data type
     break			- used for exiting the loop before the condition is false
     case			- used in switch statement, if variable equals to case value, the following code will be executed
-    catch
+    catch			- used for block of code which handles specific exception in code
     char			- data type, 0 == false, any other number == true
     class			- new data type. it has its own methods and members
     const			- define new constant with specific type, number which won't change, can be used also for methods which don't change anything in it
@@ -95,7 +95,7 @@ KEY WORDS - We shouldn't use these as our variable name
     int				- data type
     long			- data type
     mutable
-    namespace
+    namespace		- used to create scope to avoid naming conflicts
     new				- used when we want to create variable in heap accessible even after our function ends, similar to global variable, but we can control       which functions get access to it
     operator
     private			- used for defining which methods or member variables in class are private (not accessable outside of class)
@@ -113,15 +113,15 @@ KEY WORDS - We shouldn't use these as our variable name
     switch			- used when we want to make different results at different condition/value
     template
     this			- this is a pointer to the actual object we are working with
-    throw
+    throw			- used for throwing error name or exception
     true			- 1 value used for boolean data types
-    try
+    try				- this keyword is used for block of code in which we expect some errors or exceptions to be thrown
     typedef			- used for making new aliases of some datatype
     typeid
     typename
     union
     unsigned		- data type with only positive values
-    using
+    using			- used for bringing namespaces to global/current scope
     virtual			- virtual function in base class can be overwriten in derived classes and objects will automatically use the correct function
     void			- type of function/method with no return values
     volatile
@@ -896,3 +896,33 @@ unordered_multimap
 
 
 Iterator - used for going through the containers, dereference of iterator returns our object stored in container
+
+
+
+
+Day 20: Exceptions
+
+class Exception();
+
+try
+{
+	Function();
+	throw "Not enough memory";
+	Function2();
+	throw Exception();
+}
+catch (const char * text)
+{
+	// code
+}
+catch (Exception ex)
+{
+	// code
+}
+catch (...)
+{
+	// default catch block, be sure to put it last, because if it would be first it would never access the other types of exceptions
+}
+
+Exceptions are evaluated by their thrown data types in catch block
+When program throws an exception it will continue after the catch block
